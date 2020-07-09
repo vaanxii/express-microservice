@@ -1,11 +1,9 @@
 const fs = require("fs");
-const util = require("util");
-
-const readFile = util.promisify(fs.readFile);
 
 class SpeakerService {
-  constructor(datafile) {
-    this.datafile = datafile;
+  constructor({ serviceRegistryUrl, serviceVersionIdentifier }) {
+    this.serviceRegistryUrl = serviceRegistryUrl;
+    this.serviceVersionIdentifier = serviceVersionIdentifier;
   }
 
   async getNames() {
